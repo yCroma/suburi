@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  swagger-editor:
+    image: swaggerapi/swagger-editor
+    container_name:  test-swagger-editor
+    ports:
+      - ${IP}:8081:8080
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name:  test-swagger-ui
+    ports:
+      - ${IP}:8082:8080
+    volumes:
+      - ./swagger/test.json:/test.json
+    environment:
+      SWAGGER_JSON: /test.json
