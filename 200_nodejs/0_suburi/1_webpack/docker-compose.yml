@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  webpack:
+    image: node:14.16.1
+    tty: true
+    volumes:
+      - ./webpack:/webpack
